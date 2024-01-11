@@ -1,0 +1,26 @@
+@import url(//db.onlinewebfonts.com/c/084b2d8130ab665d7636de3e84692cf6?family=Family);
+
+body {
+  margin: 0;
+  /* background-color: black; */
+  background-image: url('https://i.pinimg.com/originals/62/39/4d/62394d753859943e6a1a36443ef78795.gif');
+  /* filter: brightness(30%); */
+  /* opacity:30%; */
+  /* background-blend-mode: lighten; */
+  /* backdrop-filter: 30%; */
+  background-blend-mode:multiply;
+  /* backdrop-filter: blur(20px); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* font-family: "NHassGroteskDSPro-65Md" !important; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
