@@ -22,6 +22,7 @@ function SignUp() {
 
   const SubmitHandler = async (e) => {
     e.preventDefault();
+    try{
     const resp = await axios.post(`${BACKEND_URL}/api/createUser`, {
       name: data.name,
       email: data.email,
@@ -31,6 +32,9 @@ function SignUp() {
       console.log(data);
       navigate('/login');
     })
+  }catch(error){
+    alert("Enter Valid Credentials...");
+  }
     
     // const result = await resp.json();
     // console.log(result);
