@@ -99,7 +99,7 @@ function Home() {
 
       <div className="container">
       {
-        foodCat !== [] ? foodCat?.map((data)=>{
+        foodCat !== [] ? foodCat.map((data)=>{
           return(
             <>
             <div className="row mb-3">
