@@ -25,6 +25,7 @@ function Home() {
   const [search,setSearch] = useState("");
 
   // http://localhost:5000/api//foodData
+  console.log(BACKEND_URL);
 
   const loadData = async () => {
     const response = await axios
