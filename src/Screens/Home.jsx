@@ -32,7 +32,7 @@ function Home() {
       .post(`${BACKEND_URL}/api/foodData`)
       .then((res) => {
         console.log("----",res);
-        console.log(res.data[0], res.data[1]);
+        console.log(response.data[0], response.data[1]);
         setFoodItem(res.data[0]);
         setFoodCat(res.data[1]);
       });
@@ -99,7 +99,7 @@ function Home() {
 
       <div className="container">
       {
-        foodCat !== [] ? foodCat.map((data)=>{
+        foodCat !== [] ? foodCat?.map((data)=>{
           return(
             <>
             <div className="row mb-3">
