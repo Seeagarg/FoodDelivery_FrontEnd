@@ -103,11 +103,11 @@ function Home() {
           return(
             <>
             <div className="row mb-3">
-            <div key={data._id} className="fs-3 m-3 fw-bold ">
-            {data.CategoryName}
+            <div key={data?._id} className="fs-3 m-3 fw-bold ">
+            {data?.CategoryName}
             </div>
             <hr />
-            {foodItem !== [] ? foodItem.filter((item)=>(item.CategoryName === data.CategoryName) &&(item.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
+            {foodItem !== [] ? foodItem?.filter((item)=>(item?.CategoryName === data?.CategoryName) &&(item?.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
             .map(filterItems=>{
               return(
                 <>
