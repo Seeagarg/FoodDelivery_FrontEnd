@@ -8,15 +8,16 @@ import Card_fooditem from "../Components/Card_fooditem";
 import axios from "axios";
 import Carousel from 'react-bootstrap/Carousel';
 import Form from 'react-bootstrap/Form';
+import {useNavigate} from 'react-router-dom'
 // import Button from 'react-bootstrap/Button';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const array=[
-  {src:"https://source.unsplash.com/random/900×700/?tikki"},
-  {src:"https://source.unsplash.com/random/900×700/?burger"},
-  {src:"https://source.unsplash.com/random/900×700/?pastery"},
-  {src:"https://source.unsplash.com/random/900×700/?shake"},
-  {src:"https://source.unsplash.com/random/900×700/?drinks"}
+  {src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUoyVDy5wfiQ8zx_nN_gLSFGL5YyA5XIcy-Q&s"},
+  {src:"https://www.shutterstock.com/image-photo/burger-tomateoes-lettuce-pickles-on-600nw-2309539129.jpg"},
+  {src:"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/ldk4cjzj39zneymuhulg"},
+  {src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl2Mkq2emSrBU8neblhW7REM3fcfV-4feEzw&s"},
+  {src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsEiYazbroSUd7EIedMFInGxyFnO8tohXa2Q&s"}
 ];
 
 function Home() {
@@ -26,6 +27,7 @@ function Home() {
 
   // http://localhost:5000/api//foodData
   console.log(BACKEND_URL);
+  const Navigate = useNavigate()
 
   const loadData = async () => {
     const response = await axios
@@ -41,6 +43,9 @@ function Home() {
   useEffect(() => {
     let Email = localStorage.getItem("userEmail");
     console.log("======",Email)
+    if(!Email){
+      Navigate('/login')
+    }
     loadData();
   }, []);
   //dependencies written in []
@@ -103,11 +108,11 @@ function Home() {
           return(
             <>
             <div className="row mb-3">
-            <div key={data?._id} className="fs-3 m-3 fw-bold ">
-            {data?.CategoryName}
+            <div key={data._id} className="fs-3 m-3 fw-bold ">
+            {data.CategoryName}
             </div>
             <hr />
-            {foodItem !== [] ? foodItem?.filter((item)=>(item?.CategoryName === data?.CategoryName) &&(item?.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
+            {foodItem !== [] ? foodItem.filter((item)=>(item.CategoryName === data.CategoryName) &&(item.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
             .map(filterItems=>{
               return(
                 <>
