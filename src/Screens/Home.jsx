@@ -31,12 +31,12 @@ function Home() {
 
   const loadData = async () => {
     const response = await axios
-      .post(`${BACKEND_URL}/api/foodData`)
+      .get(`${BACKEND_URL}/api/foodData`)
       .then((res) => {
         console.log("----",res);
         console.log("------------",res.data[0],"========", res.data[1]);
         setFoodItem(res.data[0]);
-        setFoodCat(res.data[1]);
+        setFoodCat(res?.data[1]);
       });
   };
 
